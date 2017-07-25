@@ -1,0 +1,12 @@
+--- dockerInit.sh	2017-07-25 21:16:04.026855809 +0000
++++ dockerInit.sh.new	2017-07-25 21:16:53.525682175 +0000
+@@ -75,6 +75,9 @@
+ then
+     echo "Start up Oracle Database"
+     echo "Start up Oracle Database" >> $INIT_LOG
++    cp -fp /u01/.bashrc /home/oracle/
++    cp -fp /u01/oratab /etc/
++    cp -fp /u01/oracle-rdbms-server-12cR1-preinstall.conf /etc/security/limits.d/
+     /bin/bash $SETUP_DIR/startupDB.sh 2>&1
+ else
+     echo "Setup Oracle Database"

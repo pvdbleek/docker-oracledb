@@ -1,0 +1,12 @@
+--- setupDB.sh  2016-11-03 03:51:23.000000000 +0000
++++ setupDB.sh.new      2017-07-25 21:05:23.141950123 +0000
+@@ -99,6 +99,9 @@
+     echo "" >> $SETUP_LOG
+     echo "Done ! The database is ready for use ."
+     echo "Done ! The database is ready for use ." >> $SETUP_LOG
++    cp -p /home/oracle/.bashrc /u01/
++    cp -p /etc/oratab /u01/
++    cp -p /etc/security/limits.d/oracle-rdbms-server-12cR1-preinstall.conf /u01/
+     exit 0
+ fi
+
