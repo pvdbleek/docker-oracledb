@@ -1,0 +1,25 @@
+--- startupDB.sh	2016-11-03 03:51:23.000000000 +0000
++++ startupDB.sh.new	2017-07-26 19:55:06.372311104 +0000
+@@ -42,6 +42,11 @@
+ echo `date`
+ echo `date` >> $START_LOG
+
++# start listener
++echo "start listener"
++echo "start listener" >> $START_LOG
++lsnrctl start  >> $START_LOG
++
+ # startup db
+ echo "start database"
+ echo "start database" >> $START_LOG
+@@ -50,11 +55,6 @@
+ exit;
+ EOF
+
+-# start listener
+-echo "start listener"
+-echo "start listener" >> $START_LOG
+-lsnrctl start  >> $START_LOG
+-
+ echo "The database is ready for use ."
+ echo "" >> $START_LOG
