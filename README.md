@@ -70,4 +70,4 @@ You can connect to the Express Enterprise Manager console by pointing your brows
 
 Log in with username SYS and your password you set in the secret.
 
-Thanks to @dglib for figuring out how to replace /dev/shm with a tmpfs filesystem.
+Thanks to [@dglib](https://github.com/dglib) for figuring out how to replace /dev/shm with a tmpfs filesystem.
