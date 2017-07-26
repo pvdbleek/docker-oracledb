@@ -1,0 +1,10 @@
+--- configDBora.sh	2016-11-03 03:51:23.000000000 +0000
++++ configDBora.sh.new	2017-07-26 19:28:41.589663128 +0000
+@@ -183,6 +183,7 @@
+ # check https port + register the instance + shut down
+ sqlplus / as sysdba 2>&1 <<EOF
+ exec dbms_xdb_config.sethttpsport (5500);
++alter system set LOCAL_LISTENER='(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))' scope=both;
+ alter system register;
+ exit;
+ EOF

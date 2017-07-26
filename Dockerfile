@@ -7,4 +7,6 @@ RUN yum install -y patch
 COPY *.patch /home/oracle/setup/
 
 RUN patch /home/oracle/setup/setupDB.sh /home/oracle/setup/setupDB.sh.patch && \
-    patch /home/oracle/setup/dockerInit.sh /home/oracle/setup/dockerInit.sh.patch
+    patch /home/oracle/setup/dockerInit.sh /home/oracle/setup/dockerInit.sh.patch && \
+    patch /home/oracle/setup/configDBora.sh /home/oracle/setup/configDBora.sh.patch
+    
