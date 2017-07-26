@@ -35,7 +35,7 @@ Now, on the node that you want to run the database on, create the following name
 
 (P.S. If you have shared storage, you might want to create the volume there so your db can move around on your worker nodes)
 
-(Note: Your worker will need some serious memmory to run this. I recommend at least 16Gb of RAM. Storage will take at least 20Gb of disk space.)
+(Note: Your worker will need some serious memory to run this. I recommend at least 16Gb of RAM. Storage will take at least 20Gb of disk space.)
 
 ````
 $ docker volume create oracledb_u01
