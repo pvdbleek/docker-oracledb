@@ -59,7 +59,7 @@ $ docker service create --name oracledb \
       --constraint node.hostname==engine4.pvdbleek.dtcntr.net \
       pvdbleek/oracledb
 ````
-P.S. If your have your named volumes on shared storage, you can drop the constraint. 
+P.S. If you have your named volumes on shared storage, you can drop the constraint. 
 
 The first time the container starts, it will create a database for you. This process can take a while (up to 15 mins).
 
