@@ -2,7 +2,7 @@
 
 First of all, thank you Oracle for still using so much shell scripting. That makes it a lot easier to troubleshoot ;-)
 
-Second, I'm in no way and Oracle DB expert, so my hacks might come accross as brutal to a true expert ;-)
+Second, I'm in no way an Oracle DB expert, so my hacks might come accross as brutal to a true expert ;-)
 I'm very open to suggestions to improve this.
 
 Here's a brief description of patches and why I chose to patch the scripts:
