@@ -23,7 +23,7 @@ Second, build and push it:
 $ docker build -t pvdbleek/oracledb .
 $ docker push pvdbleek/oracledb
 ````
-### Deploying the image to you swarm
+### Deploying the image to your swarm
 
 We don't want the password to be stored in plain text somewhere, so let's put it in a docker secret:
 
