@@ -1,7 +1,7 @@
 ## Deploying a full Oracle stack demo
 
 ### Build and push the required images
-Build the image for the Oracle WebLogic server including the demo app as described [here](https://github.com/ddc-weblogic-demo/blob/master/README.md).
+Build the image for the Oracle WebLogic server including the demo app as described [here](https://github.com/pvdbleek/ddc-weblogic-demo/blob/master/README.md).
 
 Build the image for the Oracle Database server as described [here](https://github.com/pvdbleek/docker-oracledb/blob/master/README.md).
 
