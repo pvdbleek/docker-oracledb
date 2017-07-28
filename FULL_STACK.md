@@ -50,6 +50,9 @@ $ docker service create --name oracledb \
       --constraint node.hostname==engine4.pvdbleek.dtcntr.net \
       pvdbleek/oracledb
 ````
+Please note the tmpfs filesystem to provide shm. Services do not support ```--shm``` so we have to workaround with ```tmpfs```.
+However, compose does not yet support ```tmpfs``` when deploying with ```docker stack```.
+That's why you cannot deploy the entire stack with a compose file just yet :-(
 
 If your volume are new, it will take the DB around 10-15 minutes to create the database. 
 P.S. When you have your volumes on shared storage, you can drop the constraint.
