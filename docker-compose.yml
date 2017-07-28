@@ -1,0 +1,34 @@
+version: '3.1'
+
+networks:
+   oranet:
+     external: true
+
+services:
+
+  wlsadmin:
+    image: pvdbleek/wls-app:latest
+    networks:
+      oranet:
+    ports:
+      - 7001:7001
+    secrets:
+      - oracledb_passwd
+
+  managedserver:
+    image: pvdbleek/wls-app:latest
+    command: createServer.sh
+    networks:
+      oranet:
+    ports:
+      - 7002:7002
+    depends_on:
+      - wlsadmin
+    secrets:
+      - oracledb_passwd
+
+secrets:
+  oracledb_passwd:
+    external: true
+
+
