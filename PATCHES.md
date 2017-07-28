@@ -15,7 +15,7 @@ I chose to save them to ```/u01``` after configuration so that we can restore th
 
 ### dockerInit.sh.patch
 
-This is the entrypoint to the container. It checks if $ORACLE_HOME already exists and starts the existing database if it's already there.
+This is the entrypoint to the container. It checks if ```$ORACLE_HOME``` already exists and starts the existing database if it's already there.
 This patch copies the persisted files from ```/u01``` to their original locations right before the database gets started.
 
 ### configDBora.sh.patch

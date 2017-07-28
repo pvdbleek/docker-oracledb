@@ -23,7 +23,7 @@ Second, build and push it:
 $ docker build -t pvdbleek/oracledb .
 $ docker push pvdbleek/oracledb
 ````
-### Deploying the image to you swarm
+### Deploying the image to your swarm
 
 We don't want the password to be stored in plain text somewhere, so let's put it in a docker secret:
 
@@ -59,7 +59,7 @@ $ docker service create --name oracledb \
       --constraint node.hostname==engine4.pvdbleek.dtcntr.net \
       pvdbleek/oracledb
 ````
-P.S. If your have your named volumes on shared storage, you can drop the constraint. 
+P.S. If you have your named volumes on shared storage, you can drop the constraint. 
 
 The first time the container starts, it will create a database for you. This process can take a while (up to 15 mins).
 
