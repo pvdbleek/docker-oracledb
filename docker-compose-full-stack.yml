@@ -1,0 +1,64 @@
+version: '3.6'
+
+services:
+
+  wlsadmin:
+    image: pvdbleek/wls-app:latest
+    networks:
+      oranet:
+    ports:
+      - 7001:7001
+    secrets:
+      - oracledb_passwd
+
+  managedserver:
+    image: pvdbleek/wls-app:latest
+    command: createServer.sh
+    deploy:
+      replicas: 3
+    networks:
+      oranet:
+    ports:
+      - 7002:7002
+    depends_on:
+      - wlsadmin
+    secrets:
+      - oracledb_passwd
+
+  oracledb:
+    image: pvdbleek/oracledb:latest
+    deploy:
+      placement:
+        constraints:
+          - node.hostname==engine4.pvdbleek.dtcntr.net
+    networks:
+      oranet:
+    ports:
+      - 1521
+      - 5500:5500
+    secrets:
+      - oracledb_passwd
+    volumes:
+      - oracledb_u01:/u01
+      - oracledb_u02:/u02
+      - oracledb_u03:/u03
+      - oracledb_u04:/u04
+    tmpfs:
+      - /dev/shm:size=4G
+
+secrets:
+  oracledb_passwd:
+    external: true
+
+networks:
+   oranet:
+
+volumes:
+   oracledb_u01:
+     external: true
+   oracledb_u02:
+     external: true
+   oracledb_u03:
+     external:  true
+   oracledb_u04:
+     external: true
